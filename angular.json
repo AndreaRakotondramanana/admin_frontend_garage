@@ -1,0 +1,139 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "admin-frontend-garage": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/admin-frontend-garage",
+            "index": "src/index.html",
+            "browser": "src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "tsconfig.app.json",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "public"
+              }
+            ],
+            "styles": [
+              "src/styles.css",
+              "public/assets/skydash/vendors/feather/feather.css",
+              "public/assets/skydash/vendors/ti-icons/css/themify-icons.css",
+              "public/assets/skydash/vendors/css/vendor.bundle.base.css",
+              "public/assets/skydash/vendors/datatables.net-bs4/dataTables.bootstrap4.css",
+              "public/assets/skydash/js/select.dataTables.min.css",
+              "public/assets/skydash/css/vertical-layout-light/style.css"
+            ],
+            "scripts": [
+              "public/assets/skydash/vendors/js/vendor.bundle.base.js",
+              "public/assets/skydash/vendors/chart.js/Chart.min.js",
+              "public/assets/skydash/vendors/datatables.net/jquery.dataTables.js",
+              "public/assets/skydash/vendors/datatables.net-bs4/dataTables.bootstrap4.js",
+              "public/assets/skydash/js/dataTables.select.min.js",
+              "public/assets/skydash/js/off-canvas.js",
+              "public/assets/skydash/js/hoverable-collapse.js",
+              "public/assets/skydash/js/template.js",
+              "public/assets/skydash/js/settings.js",
+              "public/assets/skydash/js/todolist.js",
+              "public/assets/skydash/js/dashboard.js",
+              "public/assets/skydash/js/Chart.roundedBarCharts.js"
+            ],
+            "server": "src/main.server.ts",
+            "outputMode": "server",
+            "ssr": {
+              "entry": "src/server.ts"
+            }
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "admin-frontend-garage:build:production"
+            },
+            "development": {
+              "buildTarget": "admin-frontend-garage:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "tsconfig.spec.json",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "public"
+              }
+            ],
+            "styles": [
+              "src/styles.css",
+              "public/assets/skydash/vendors/feather/feather.css",
+              "public/assets/skydash/vendors/ti-icons/css/themify-icons.css",
+              "public/assets/skydash/vendors/css/vendor.bundle.base.css",
+              "public/assets/skydash/vendors/datatables.net-bs4/dataTables.bootstrap4.css",
+              "public/assets/skydash/js/select.dataTables.min.css",
+              "public/assets/skydash/css/vertical-layout-light/style.css"
+            ],
+            "scripts": [
+              "public/assets/skydash/vendors/js/vendor.bundle.base.js",
+              "public/assets/skydash/vendors/chart.js/Chart.min.js",
+              "public/assets/skydash/vendors/datatables.net/jquery.dataTables.js",
+              "public/assets/skydash/vendors/datatables.net-bs4/dataTables.bootstrap4.js",
+              "public/assets/skydash/js/dataTables.select.min.js",
+              "public/assets/skydash/js/off-canvas.js",
+              "public/assets/skydash/js/hoverable-collapse.js",
+              "public/assets/skydash/js/template.js",
+              "public/assets/skydash/js/settings.js",
+              "public/assets/skydash/js/todolist.js",
+              "public/assets/skydash/js/dashboard.js",
+              "public/assets/skydash/js/Chart.roundedBarCharts.js"
+            ]
+          }
+        }
+      }
+    }
+  }
+}
