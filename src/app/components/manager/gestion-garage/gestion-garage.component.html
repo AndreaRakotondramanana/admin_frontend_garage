@@ -1,0 +1,120 @@
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <!-- En-tête avec le bouton + -->
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h4 class="card-title">Liste des garages</h4>
+                <a href="/ajouter-garage" class="btn btn-primary btn-icon-text">
+                    <i class="bi bi-plus"></i> Ajouter un garage
+                </a>
+            </div>
+
+            <!-- Tableau des garages -->
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Garage</th>
+                            <th>Contact</th>
+                            <th>Latitude</th>
+                            <th>Longitude</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (garage of garages; track garage._id) {
+                        <tr>
+                            <td>Garage {{ garage.localisation }}</td>
+                            <td>{{ garage.contact }}</td>
+                            <td>{{ garage.latitude }}</td>
+                            <td>{{ garage.longitude }}</td> 
+                            <td>
+                                <a class="lien-sans-style" href="/modif-garage">
+                                    <button type="button" class="btn btn-inverse-info btn-fw">
+                                        <i class="bi-pencil"></i>
+                                    </button>
+                                </a>
+                                <!-- <a class="lien-sans-style" href=""> --> 
+                                    <button (click)="deleteGarage(garage._id)" type="button" class="btn btn-inverse-warning btn-fw">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                <!-- </a> --> 
+                            </td>
+                        </tr>
+                        }
+                        <!-- Répéter les autres lignes du tableau -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Liste des clients en cours</h4>
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Date opération</th>
+                            <th>Voiture</th>
+                            <th>Garage</th>
+                            <th>Proprietaire</th>
+                            <th>Statut</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (operation of operations; track operation._id) {
+                            <tr>
+                                <td>{{ operation.date_heure | date }}</td>
+                              <td>{{ operation.model }} {{ operation.marque }} {{ operation.immatriculation }}</td>
+                              <td>Garage {{ operation.localisation }}</td>
+                              <td>{{ operation.nom }} {{ operation.prenom }}</td>
+                              <td>
+                                <!-- Utilisation de ngClass pour appliquer des classes conditionnelles -->
+                                <label [ngClass]="operation.statut === 'devis' ? 'badge badge-warning' : 'badge badge-info'">
+                                  {{ operation.statut }}
+                                </label>
+                              </td>
+                            </tr>
+                          }
+                        <!-- @for (operation of operations; track operation._id) {
+                            <tr>
+                                <td>{{ operation.model }} {{ operation.marque }} {{ operation.immatriculation }}</td>
+                                <td>Garage {{ operation.localisation }}</td>
+                                <td>{{ operation.nom }} {{ operation.prenom }}</td>
+                                <td><label class="badge badge-danger">{{ operation.statut }}</label></td>
+                            </tr>
+                        }
+                        <tr>
+                            <td>Messsy</td>
+                            <td>Flash</td>
+                            <td>21.06%</td>
+                            <td><label class="badge badge-warning">In progress</label></td>
+                        </tr>
+                        <tr>
+                            <td>John</td>
+                            <td>Premier</td>
+                            <td>35.00%</td>
+                            <td><label class="badge badge-info">Fixed</label></td>
+                        </tr>
+                        <tr>
+                            <td>Peter</td>
+                            <td>After effects</td>
+                            <td> 82.00% </td>
+                            <td><label class="badge badge-success">Completed</label></td>
+                        </tr>
+                        <tr>
+                            <td>Dave</td>
+                            <td>53275535</td>
+                            <td> 98.05% </td>
+                            <td><label class="badge badge-warning">In progress</label></td>
+                        </tr> -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

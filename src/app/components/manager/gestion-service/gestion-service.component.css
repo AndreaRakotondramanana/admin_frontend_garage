@@ -1,0 +1,14 @@
+/* Style de base de la carte */
+.ajout {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée au survol */
+}
+
+.card {
+    transition: box-shadow 0.3s ease-in-out; /* Transition douce pour l'effet d'ombre */
+    border-radius: 8px; /* Optionnel: pour des coins arrondis */
+}
+
+/* Effet d'ombre au survol */
+.card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée au survol */
+}
