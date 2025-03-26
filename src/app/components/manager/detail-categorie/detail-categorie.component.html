@@ -1,0 +1,79 @@
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <!-- En-tête avec le bouton + -->
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h4 class="card-title">Liste de toutes les Prestations de cette catégorie</h4>
+                <button type="button" class="btn btn-primary btn-icon-text" data-bs-toggle="modal" data-bs-target="#ajouterPrestationModal">
+                    <i class="bi bi-plus"></i> Ajouter
+                </button>
+            </div>
+
+            <!-- Tableau des prestations -->
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Prestation</th>
+                            <th>Prix unitaire de base</th>
+                            <th>Duree (en J)</th> 
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (prestation of prestations; track prestation._id) {
+                        <tr>
+                            <td>{{ prestation.libelle_prestation }}</td>
+                            <td>{{ prestation.prix_unitaire_base }}</td>
+                            <td>{{ prestation.duree }}</td>
+                            <td>
+                                <!-- <a class="lien-sans-style" href="/modif-prestation"><button type="button" class="btn btn-inverse-info btn-fw"><i class="bi-pencil"></i></button></a> -->
+                                <!-- <a class="lien-sans-style" href=""> -->
+                                    <button (click)="deletePrestation(prestation._id)" type="button" class="btn btn-inverse-warning btn-fw"><i class="bi bi-trash"></i></button>
+                                <!-- </a> -->
+                            </td>
+                        </tr>
+                        }
+                        <!-- Répéter les lignes du tableau -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal pour l'ajout de prestation -->
+<div class="modal fade" id="ajouterPrestationModal" tabindex="-1" aria-labelledby="ajouterPrestationModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ajouterPrestationModalLabel">Ajouter une prestation</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form (ngSubmit)="onSubmit()"> <!-- Ajouter (ngSubmit) -->
+                <div class="modal-body">
+                    <!-- Formulaire d'ajout -->
+                    <div class="mb-3">
+                        <label for="labelPrestation" class="form-label">Label</label>
+                        <input type="text" class="form-control" id="labelPrestation" placeholder="Entrez le label de la prestation"
+                               [(ngModel)]="newPrestation.libelle_prestation" name="libelle_prestation" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="prixUnitaire" class="form-label">Prix unitaire</label>
+                        <input type="number" class="form-control" id="prixUnitaire" placeholder="Entrez le prix unitaire"
+                               [(ngModel)]="newPrestation.prix_unitaire_base" name="prix_unitaire_base" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="duree" class="form-label">Durée (en jours)</label>
+                        <input type="number" class="form-control" id="duree" placeholder="Entrez la durée en jours"
+                               [(ngModel)]="newPrestation.duree" name="duree" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                    <button type="submit" class="btn btn-primary">Enregistrer</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

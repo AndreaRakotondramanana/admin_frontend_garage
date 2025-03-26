@@ -1,0 +1,93 @@
+<div class="row">
+    <div class="col-md-4 grid-margin grid-margin-md-0 stretch-card m-b-3 ">
+        <div class="card ajout d-flex align-items-center justify-content-center text-center">
+            <div class="card-body">
+                <h4 class="card-title">Ajouter une catégorie</h4>
+                <!-- Bouton pour ouvrir le modal -->
+                <button type="button" class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#ajoutCategorieModal">
+                    <i class="bi bi-plus-circle"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal d'insertion -->
+    <div class="modal fade" id="ajoutCategorieModal" tabindex="-1" aria-labelledby="ajoutCategorieModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ajoutCategorieModalLabel">Ajouter une nouvelle catégorie</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                </div>
+                <div class="modal-body">
+                    <form (ngSubmit)="onSubmit()"> <!-- Ajouter (ngSubmit) --> 
+                        <div class="mb-3">
+                            <label for="libelle_categorie" class="form-label">Nom de la catégorie</label>
+                            <input type="text" id="libelle_categorie" class="form-control" placeholder="Saisissez le nom de la catégorie..." [(ngModel)]="newCategorie.libelle_categorie" name="libelle_categorie" required>
+                        </div> 
+                        <div class="mb-3">
+                            <label for="description" class="form-label">Description de la catégorie</label>
+                            <textarea id="description" class="form-control" rows="3" placeholder="Saisissez la description de la catégorie..." [(ngModel)]="newCategorie.description" name="description" required></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-success">Ajouter</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div> 
+    
+    @for (categorie of categories; track categorie._id) {
+    <div class="col-md-4 grid-margin grid-margin-md-0 stretch-card m-b-3">
+        <a [routerLink]="['/detail-categorie', categorie._id]" class="lien-sans-style">
+            <div class="card"> 
+                <div class="card-body">
+                    <h4 class="card-title">{{ categorie.libelle_categorie }}</h4>
+                    <p class="card-description">
+                        {{ categorie.description }}
+                    </p>
+                </div>
+            </div>
+        </a>
+    </div> 
+    }
+    <!-- <div class="col-md-4 grid-margin grid-margin-md-0 stretch-card m-b-3">
+        <a href="/detail-categorie" class="lien-sans-style">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Categorie 1</h4>
+                    <p class="card-description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad adipisci tenetur in consectetur vel velit et, dolores ipsam ipsum commodi nisi repudiandae quam! Eaque animi, voluptatum non id alias iste.
+                    </p>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="col-md-4 grid-margin grid-margin-md-0 stretch-card m-b-3">
+        <a href="/detail-categorie" class="lien-sans-style">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Categorie 1</h4>
+                    <p class="card-description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad adipisci tenetur in consectetur vel velit et, dolores ipsam ipsum commodi nisi repudiandae quam! Eaque animi, voluptatum non id alias iste.
+                    </p>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="col-md-4 grid-margin grid-margin-md-0 stretch-card m-b-3">
+        <a href="/detail-categorie" class="lien-sans-style">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Categorie 1</h4>
+                    <p class="card-description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad adipisci tenetur in consectetur vel velit et, dolores ipsam ipsum commodi nisi repudiandae quam! Eaque animi, voluptatum non id alias iste.
+                    </p>
+                </div>
+            </div>
+        </a>
+    </div> -->
+</div>

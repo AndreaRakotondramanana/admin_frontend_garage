@@ -28,6 +28,8 @@
             ],
             "styles": [
               "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/bootstrap-icons/font/bootstrap-icons.css",
               "public/assets/skydash/vendors/feather/feather.css",
               "public/assets/skydash/vendors/ti-icons/css/themify-icons.css",
               "public/assets/skydash/vendors/css/vendor.bundle.base.css",
@@ -36,6 +38,7 @@
               "public/assets/skydash/css/vertical-layout-light/style.css"
             ],
             "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
               "public/assets/skydash/vendors/js/vendor.bundle.base.js",
               "public/assets/skydash/vendors/chart.js/Chart.min.js",
               "public/assets/skydash/vendors/datatables.net/jquery.dataTables.js",
@@ -110,6 +113,8 @@
             ],
             "styles": [
               "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/bootstrap-icons/font/bootstrap-icons.css",
               "public/assets/skydash/vendors/feather/feather.css",
               "public/assets/skydash/vendors/ti-icons/css/themify-icons.css",
               "public/assets/skydash/vendors/css/vendor.bundle.base.css",
@@ -118,6 +123,7 @@
               "public/assets/skydash/css/vertical-layout-light/style.css"
             ],
             "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
               "public/assets/skydash/vendors/js/vendor.bundle.base.js",
               "public/assets/skydash/vendors/chart.js/Chart.min.js",
               "public/assets/skydash/vendors/datatables.net/jquery.dataTables.js",
