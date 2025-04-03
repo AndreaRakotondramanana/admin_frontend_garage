@@ -13,7 +13,7 @@ export class ReparationService {
   constructor(private http: HttpClient) { } 
 
   getOperationView(): Observable<any> {
-    return this.http.get(`${this.apiUrl}/cours`);
+    return this.http.get(`${this.apiUrl}/cours/67d6938ce5a5f58b09b9a1d9`);
   }
 
   getOperationViewById(id: string): Observable<any> {

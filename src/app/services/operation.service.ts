@@ -16,7 +16,7 @@ export class OperationService {
   }
 
   getOperationViewCours(): Observable<any> {
-    return this.http.get(`${this.apiUrl}/cours`);
+    return this.http.get(`${this.apiUrl}/cours/67d6938ce5a5f58b09b9a1d9`);
   }
 
   // Récupérer un mécanicien par son ID
