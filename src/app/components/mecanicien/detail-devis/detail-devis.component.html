@@ -1,0 +1,56 @@
+<!-- <div class="row"> -->
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">A savoir :</h4>
+                <ul class="list-arrow">
+                    <li>Date : {{ detailClient?.date_heure | date }}</li>
+                    <li>Propriétaire : Mr/Mme {{ detailClient?.nom }} {{ detailClient?.prenom }}</li>
+                    <li>Voiture : {{ detailClient?.model }} {{ detailClient?.marque }} {{ detailClient?.immatriculation }}</li>
+                </ul>
+            </div> 
+        </div>
+    </div>
+<!-- </div> -->
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Détails de cette réparation</h4>
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Categorie</th>
+                            <th>Prestation</th>
+                            <th>Quantité</th>
+                            <th>Prix unitaire</th>
+                            <th>Statut</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (do of detailOperation; track do._id) {
+                        <tr>
+                            <td>{{ do.libelle_categorie }}</td>
+                            <td>{{ do.libelle_prestation }}</td>
+                            <td>{{ do.quantite }}</td>
+                            <td>{{ do.prix_unitaire_base }}</td>
+                            <td>
+                               <!-- Utilisation de ngClass pour appliquer des classes conditionnelles -->
+                               <span class="badge" 
+                                    [ngClass]="{
+                                        'badge-warning': do.statut === 'En attente',
+                                        'badge-info': do.statut === 'En cours',
+                                        'badge-success': do.statut === 'Fait'
+                                    }">
+                                    {{ do.statut }}
+                                </span>
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

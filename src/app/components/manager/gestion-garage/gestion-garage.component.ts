@@ -19,7 +19,7 @@ export class GestionGarageComponent implements OnInit {
       this.loadGarages(); 
       this.loadOperations(); 
     }
-   
+    
     loadGarages(): void {
       this.garageService.getGarages().subscribe(data => this.garages = data);
     }

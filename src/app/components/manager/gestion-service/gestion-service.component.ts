@@ -41,7 +41,7 @@ export class GestionServiceComponent implements OnInit {
             backdrop.remove();
           }
         }
-      },
+      }, 
       error: (error) => {
         console.error('Erreur lors de l\'ajout de la catégorie', error);
       }
