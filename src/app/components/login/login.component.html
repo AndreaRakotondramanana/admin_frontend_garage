@@ -1,0 +1,29 @@
+<div class="login-container">
+    <div class="login-box">
+        <div class="logo text-center">
+            <img src="assets/logo.png" alt="Admin Logo">
+        </div>
+        <h3 class="text-center">Admin Login</h3>
+
+        <form (ngSubmit)="login()">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" class="form-control" [(ngModel)]="email" name="email"
+                    placeholder="Enter your email">
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" [(ngModel)]="password" name="password" class="form-control"
+                    placeholder="Enter your password">
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">Login</button>
+            <p *ngIf="errorMessage" class="text-danger mt-2">{{ errorMessage }}</p>
+        </form>
+
+        <div class="text-center mt-3">
+            <a href="#" class="forgot-password">Forgot Password?</a>
+        </div>
+    </div>
+</div>
