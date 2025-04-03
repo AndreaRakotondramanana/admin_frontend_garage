@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ReparationService } from '../../../services/reparation.service';
+import { ReparationService } from '../../../services/reparation.service'; 
 import { CommonModule } from '@angular/common'; // Importer CommonModule
 import {RouterModule} from '@angular/router';
 
