@@ -6,7 +6,7 @@ import { MecanicienViewService } from '../../../services/mecanicien-view.service
 @Component({
   selector: 'app-detail-employe',
   imports: [
-    CommonModule, // Ajouter CommonModule ici
+    CommonModule, // Ajouter CommonModule ici 
     // RouterModule
   ],
   templateUrl: './detail-employe.component.html', 

@@ -34,4 +34,9 @@ export class PrestationViewService {
   addPrestation(prestation: any): Observable<any> {
     return this.http.post(`${this.apiUrl2}`, prestation);
   }
+
+  // Prendre toutes les prestations par categorie
+  getPrestationsByCat(): Observable<any> {
+    return this.http.get(`${this.apiUrl}/prestations-par-categorie`);
+  }
 }
