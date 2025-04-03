@@ -28,15 +28,24 @@
             ],
             "styles": [
               "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/bootstrap-icons/font/bootstrap-icons.css",
               "public/assets/skydash/vendors/feather/feather.css",
               "public/assets/skydash/vendors/ti-icons/css/themify-icons.css",
               "public/assets/skydash/vendors/css/vendor.bundle.base.css",
+              "public/assets/skydash/vendors/select2/select2.min.css",
+              "public/assets/skydash/vendors/select2-bootstrap-theme/select2-bootstrap.min.css",
               "public/assets/skydash/vendors/datatables.net-bs4/dataTables.bootstrap4.css",
               "public/assets/skydash/js/select.dataTables.min.css",
               "public/assets/skydash/css/vertical-layout-light/style.css"
             ],
             "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
               "public/assets/skydash/vendors/js/vendor.bundle.base.js",
+
+              "public/assets/skydash/js/typeahead.js",
+              "public/assets/skydash/js/select2.js",
+
               "public/assets/skydash/vendors/chart.js/Chart.min.js",
               "public/assets/skydash/vendors/datatables.net/jquery.dataTables.js",
               "public/assets/skydash/vendors/datatables.net-bs4/dataTables.bootstrap4.js",
@@ -110,15 +119,24 @@
             ],
             "styles": [
               "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/bootstrap-icons/font/bootstrap-icons.css",
               "public/assets/skydash/vendors/feather/feather.css",
               "public/assets/skydash/vendors/ti-icons/css/themify-icons.css",
               "public/assets/skydash/vendors/css/vendor.bundle.base.css",
+              "public/assets/skydash/vendors/select2/select2.min.css",
+              "public/assets/skydash/vendors/select2-bootstrap-theme/select2-bootstrap.min.css",
               "public/assets/skydash/vendors/datatables.net-bs4/dataTables.bootstrap4.css",
               "public/assets/skydash/js/select.dataTables.min.css",
               "public/assets/skydash/css/vertical-layout-light/style.css"
             ],
             "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
               "public/assets/skydash/vendors/js/vendor.bundle.base.js",
+
+              "public/assets/skydash/js/typeahead.js",
+              "public/assets/skydash/js/select2.js",
+
               "public/assets/skydash/vendors/chart.js/Chart.min.js",
               "public/assets/skydash/vendors/datatables.net/jquery.dataTables.js",
               "public/assets/skydash/vendors/datatables.net-bs4/dataTables.bootstrap4.js",

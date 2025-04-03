@@ -1,0 +1,106 @@
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Diagnostique a faire ce jour (Rdv)</h4>
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Voiture</th>
+                            <th>Client</th>
+                            <th>Note</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <!-- <tbody>
+                        <tr>
+                            <td>ddd</td>
+                            <td>ddd</td>
+                            <td>ddd</td>
+                            <td>ddd</td>
+                            <td>
+                                <a href="/nouveau-devis" class="lien-sans-style"><button type="button" class="btn btn-inverse-info btn-fw">
+                                    Faire un devis
+                                    <i class="bi bi-eye"></i>
+                                </button></a>
+                            </td>
+                        </tr>
+                    </tbody> --> 
+                    <tbody>
+                        @for (diagnostique of diagnostiques; track diagnostique._id) {
+                        <tr>
+                            <td>{{ diagnostique.date_heure | date: 'medium' : 'UTC+0' }}</td>
+                            <td>{{ diagnostique.model }} {{ diagnostique.marque }} {{ diagnostique.immatriculation }}</td>
+                            <td>{{ diagnostique.nom }} {{ diagnostique.prenom }}</td>
+                            <td>{{ diagnostique.note }}</td>
+                            <td>
+                                <a [routerLink]="['/nouveau-devis', diagnostique._id]" class="lien-sans-style">
+                                    <button type="button" class="btn btn-inverse-info btn-fw">
+                                        Faire un devis
+                                        <i class="bi bi-file-earmark-text"></i>
+                                    </button>
+                                </a>
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <!-- En-tête avec le bouton + -->
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h4 class="card-title">Gestion des taches quotidiennes</h4>
+            </div>
+
+            <!-- Tableau des garages -->
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Voiture</th>
+                            <th>Categorie</th>
+                            <th>Prestation</th>
+                            <th>Client</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (tache of taches; track tache._id) {
+                        <tr>
+                            <td>{{ tache.model_voiture }} {{ tache.marque_voiture }} {{ tache.immatriculation_voiture }}</td>
+                            <td>{{ tache.libelle_categorie }}</td>
+                            <td>{{ tache.libelle_prestation }}</td>
+                            <td>{{ tache.nom_client }} {{ tache.prenom_client }}</td>
+                            <td>
+                                <button (click)="modifierStatut(tache.detailOperationId, statuts.ATTENTE)" 
+                                        class="btn btn-inverse-danger btn-fw"
+                                        [class.active]="tache.statut === statuts.ATTENTE">
+                                    {{ statuts.ATTENTE }}
+                                </button>
+                                <button (click)="modifierStatut(tache.detailOperationId, statuts.COURS)" 
+                                        class="btn btn-inverse-warning btn-fw"
+                                        [class.active]="tache.statut === statuts.COURS">
+                                    {{ statuts.COURS }}
+                                </button>
+                                <button (click)="modifierStatut(tache.detailOperationId, statuts.FAIT)" 
+                                        class="btn btn-inverse-success btn-fw"
+                                        [class.active]="tache.statut === statuts.FAIT">
+                                    {{ statuts.FAIT }}
+                                </button>
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

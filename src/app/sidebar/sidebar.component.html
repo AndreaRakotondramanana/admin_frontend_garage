@@ -2,15 +2,52 @@
     <ul class="nav">
         <li class="nav-item">
             <a class="nav-link" href="accueil">
+            <a class="nav-link" href="/">
                 <i class="icon-grid menu-icon"></i>
-                <span class="menu-title">Dashboard</span>
+                <span class="menu-title">Tableau de bord</span>
+            </a>
+        <!-- </li> -->
+        <li class="nav-item">
+            <a class="nav-link" href="/gestion-service">
+                <i class="bi bi-tools menu-icon"></i>
+                <span class="menu-title">Gestion des services</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/gestion-garage">
+                <i class="bi bi-building menu-icon"></i>
+                <span class="menu-title">Gestion des garages</span> 
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="rendezvous">
                 <i class="icon-paper menu-icon"></i>
                 <span class="menu-title">Rendez-vous</span>
+            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                <i class="bi bi-person-gear menu-icon"></i>
+                <span class="menu-title">Gestion des employés</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-basic">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> <a class="nav-link" href="/gestion-employe">Mecaniciens</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="/employe-present">Présence ce jour</a></li>
+                </ul>
+            </div>
+        <!-- </li> -->
+
+        <!-- Mecanicien  -->
+        <li class="nav-item">
+            <a class="nav-link" href="/gestion-reparation">
+                <i class="bi-wrench menu-icon"></i>
+                <span class="menu-title">Gestion des réparations</span> 
             </a>
         </li>
-    </ul>
-</nav>
+        <li class="nav-item">
+            <a class="nav-link" href="/gestion-tache">
+                <i class="bi bi-list-check menu-icon"></i>
+                <span class="menu-title">Gestion des tâches</span> 
+            </a>
+        </li>
+    <!-- </ul> -->
+<!-- </nav> -->

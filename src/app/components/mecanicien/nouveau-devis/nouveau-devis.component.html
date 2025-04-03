@@ -1,0 +1,57 @@
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Réaliser un devis pour ce rendez-vous</h4>
+            <form class="form-sample" (ngSubmit)="onSubmit()">
+                <!-- Boucle sur les catégories -->
+                @for (categorie of categories; track categorie.categorieId) {
+                <div>
+                    <h5>{{ categorie.libelle_categorie }}</h5>
+                    <hr style="background-color: black;">
+                    
+                    <!-- Boucle sur les prestations de la catégorie -->
+                    @for (presta of categorie.prestations; track presta.prestationId) {
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <div class="offset-sm-2 col-sm-1">
+                                    <div class="form-check">
+                                        <label class="">
+                                            <input type="checkbox" 
+                                            id="presta_{{presta.prestationId}}"
+                                            class="form-check-input">
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-8">
+                                    <div class="form-check">
+                                               <label class="form-check-label" for="presta_{{presta.prestationId}}">
+                                                   {{ presta.libelle_prestation }}
+                                               </label>
+                                            </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row align-items-center">
+                                <label class="col-sm-3 col-form-label">Quantité</label>
+                                <div class="col-sm-9">
+                                    <input type="number" 
+                                           min="0"
+                                           placeholder="en unité"
+                                           class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    }
+                </div>
+                }
+                
+                <button type="submit" class="btn btn-info btn-rounded btn-fw">
+                    Valider le devis
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
