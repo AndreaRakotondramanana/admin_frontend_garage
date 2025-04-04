@@ -21,7 +21,7 @@ export class LoginComponent {
     this.authService.login(this.email, this.password).subscribe({
       next: (response) => {
         this.authService.saveToken(response.token);
-        this.router.navigate(['/accueil']);
+        this.router.navigate(['/dashboard']);
       },
       error: (error) => {
         this.errorMessage = error.error.message;
