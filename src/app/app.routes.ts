@@ -20,8 +20,10 @@ export const routes: Routes = [
     { 
         path: '', 
         component: TableauDeBordComponent,
-        data: { renderMode: 'prerender' } // Explicit pour Netlify
+        data: { renderMode: 'prerender' },
+        canActivate: [AuthGuard] // Explicit pour Netlify
     },
+    { path: 'login', component: LoginComponent },
     // Routes statiques
     { 
         path: 'modif-prestation', 
