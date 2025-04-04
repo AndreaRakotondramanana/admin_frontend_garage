@@ -10,7 +10,7 @@ import { PrestationViewService } from '../../../services/prestation-view.service
   templateUrl: './detail-categorie.component.html',
   styleUrl: './detail-categorie.component.css'
 })
-export class DetailCategorieComponent implements OnInit {
+export class DetailCategorieComponent implements OnInit { 
   prestations: any[] = [];
 
   // Propriétés pour le formulaire d'ajout de prestation

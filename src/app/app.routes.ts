@@ -13,19 +13,82 @@ import { NouveauDevisComponent } from './components/mecanicien/nouveau-devis/nou
 import { DetailDevisComponent } from './components/mecanicien/detail-devis/detail-devis.component';
 
 export const routes: Routes = [
-    { path: '', component: TableauDeBordComponent},
-    { path: 'detail-categorie/:idCat', component: DetailCategorieComponent},
-    { path: 'detail-employe/:id', component: DetailEmployeComponent},
-    { path: 'modif-prestation', component: ModifPrestationComponent},
-    { path: 'employe-present', component: EmployePresentComponent},
-    { path: 'gestion-employe', component: GestionEmployeComponent},
-    { path: 'gestion-garage', component: GestionGarageComponent},
-    { path: 'gestion-service', component: GestionServiceComponent},
-    { path: 'gestion-reparation', component: GestionReparationComponent},
-    { path: 'gestion-tache', component: GestionTacheComponent},
-    // { path: 'nouveau-devis', component: NouveauDevisComponent},
-    // { path: 'detail-devis', component: DetailDevisComponent},
-    { path: 'detail-devis/:id', component: DetailDevisComponent},
-    { path: 'nouveau-devis/:idRdv', component: NouveauDevisComponent},
+    { 
+        path: '', 
+        component: TableauDeBordComponent,
+        data: { renderMode: 'prerender' } // Explicit pour Netlify
+    },
+    // Routes statiques
+    { 
+        path: 'modif-prestation', 
+        component: ModifPrestationComponent,
+        data: { renderMode: 'prerender' }
+    },
+    { 
+        path: 'employe-present', component: EmployePresentComponent,
+        data: { renderMode: 'prerender' }
+    },
+    { 
+        path: 'gestion-employe', component: GestionEmployeComponent,
+        data: { renderMode: 'prerender' }
+    },
+    { 
+        path: 'gestion-garage', component: GestionGarageComponent,
+        data: { renderMode: 'prerender' }
+    },
+    { 
+        path: 'gestion-service', component: GestionServiceComponent,
+        data: { renderMode: 'prerender' }
+    },
+    { 
+        path: 'gestion-reparation', component: GestionReparationComponent,
+        data: { renderMode: 'prerender' }
+    },
+    { 
+        path: 'gestion-tache', component: GestionTacheComponent,
+        data: { renderMode: 'prerender' }
+    },
+    // ... autres routes statiques avec renderMode: 'prerender'
+    
+    // Routes dynamiques
+    { 
+        path: 'detail-categorie/:idCat', 
+        component: DetailCategorieComponent,
+        data: { renderMode: 'ssr' } // Explicit pour Netlify
+    },
+    { 
+        path: 'detail-employe/:id', component: DetailEmployeComponent,
+        data: { renderMode: 'ssr' } // Explicit pour Netlify
+    },
+    { 
+        path: 'detail-devis/:id', component: DetailDevisComponent,
+        data: { renderMode: 'ssr' } // Explicit pour Netlify
+    },
+    { 
+        path: 'nouveau-devis/:idRdv', component: NouveauDevisComponent,
+        data: { renderMode: 'ssr' } // Explicit pour Netlify
+    },
+    // ... autres routes dynamiques avec renderMode: 'ssr'
 ];
+
+// export const routes: Routes = [
+//     // { path: '', component: TableauDeBordComponent},
+//     // { path: 'detail-categorie/:idCat', component: DetailCategorieComponent, data: {
+//     //     renderMode: 'disable'  // ❗ important pour éviter l'erreur
+//     //   }},
+//     // { path: 'detail-employe/:id', component: DetailEmployeComponent},
+//     // { path: 'modif-prestation', component: ModifPrestationComponent},
+//     // { path: 'employe-present', component: EmployePresentComponent},
+//     // { path: 'gestion-employe', component: GestionEmployeComponent},
+//     // { path: 'gestion-garage', component: GestionGarageComponent},
+//     // { path: 'gestion-service', component: GestionServiceComponent},
+//     // { path: 'gestion-reparation', component: GestionReparationComponent},
+//     // { path: 'gestion-tache', component: GestionTacheComponent},
+//     // { path: 'nouveau-devis', component: NouveauDevisComponent},
+//     // { path: 'detail-devis', component: DetailDevisComponent},
+//     // { path: 'detail-devis/:id', component: DetailDevisComponent, data: {
+//     //     renderMode: 'disable'  // ❗ important pour éviter l'erreur
+//     //   }},
+//     { path: 'nouveau-devis/:idRdv', component: NouveauDevisComponent},
+// ];
 

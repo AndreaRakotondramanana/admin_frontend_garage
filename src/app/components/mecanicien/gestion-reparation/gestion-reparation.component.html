@@ -13,23 +13,6 @@
                             <th></th>
                         </tr>
                     </thead>
-                    <!-- <tbody> 
-                        <tr>
-                            <td>22/12/2025</td>
-                            <td>bla bla bal</td>
-                            <td>dddd</td>
-                            <td>
-                                <a href="/detail-devis" class="lien-sans-style"><button type="button" class="btn btn-inverse-info btn-fw">
-                                    Voir la réparation
-                                    <i class="bi bi-eye"></i>
-                                </button></a>
-                                <button type="button" class="btn btn-inverse-warning btn-fw">
-                                    Terminer la réparation
-                                    <i class="bi bi-person-x"></i>
-                                </button>
-                            </td>
-                        </tr>
-                    </tbody> -->
                     <tbody> 
                         @for (reparation of reparations; track reparation._id) { 
                         <tr>
@@ -37,7 +20,7 @@
                             <td>{{ reparation.model }} {{ reparation.marque }} {{ reparation.immatriculation }}</td>
                             <td>{{ reparation.nom }} {{ reparation.prenom }}</td>
                             <td>
-                                <a class="lien-sans-style" [routerLink]="['/detail-devis', reparation._id]"><button type="button" class="btn btn-inverse-info btn-fw"><i class="bi bi-eye"></i></button></a>
+                                <a class="lien-sans-style" href="/detail-devis/{{reparation._id}}"><button type="button" class="btn btn-inverse-info btn-fw"><i class="bi bi-eye"></i></button></a>
                                 <button (click)="marquerHistorique(reparation._id)" type="button" class="btn btn-inverse-success btn-fw">
                                     <i class="bi bi-check-circle-fill"></i>
                                 </button>
