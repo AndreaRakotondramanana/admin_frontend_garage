@@ -13,20 +13,6 @@
                             <th></th>
                         </tr>
                     </thead>
-                    <!-- <tbody>
-                        <tr>
-                            <td>ddd</td>
-                            <td>ddd</td>
-                            <td>ddd</td>
-                            <td>ddd</td>
-                            <td>
-                                <a href="/nouveau-devis" class="lien-sans-style"><button type="button" class="btn btn-inverse-info btn-fw">
-                                    Faire un devis
-                                    <i class="bi bi-eye"></i>
-                                </button></a>
-                            </td>
-                        </tr>
-                    </tbody> --> 
                     <tbody>
                         @for (diagnostique of diagnostiques; track diagnostique._id) {
                         <tr>
@@ -35,7 +21,7 @@
                             <td>{{ diagnostique.nom }} {{ diagnostique.prenom }}</td>
                             <td>{{ diagnostique.note }}</td>
                             <td>
-                                <a [routerLink]="['/nouveau-devis', diagnostique._id]" class="lien-sans-style">
+                                <a href="/nouveau-devis/{{diagnostique._id}}" class="lien-sans-style">
                                     <button type="button" class="btn btn-inverse-info btn-fw">
                                         Faire un devis
                                         <i class="bi bi-file-earmark-text"></i>

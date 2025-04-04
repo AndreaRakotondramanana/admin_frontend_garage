@@ -7,7 +7,7 @@ import { MecanicienViewService } from '../../../services/mecanicien-view.service
   selector: 'app-detail-employe',
   imports: [
     CommonModule, // Ajouter CommonModule ici 
-    // RouterModule
+    // RouterModule 
   ],
   templateUrl: './detail-employe.component.html', 
   styleUrls: ['./detail-employe.component.css']

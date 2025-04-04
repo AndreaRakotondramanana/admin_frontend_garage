@@ -19,11 +19,11 @@
                             <td>Garage {{ mv.localisation }}</td>
                             <td>{{ mv.libelle_categorie }}</td>
                             <td>
-                                <a class="lien-sans-style" [routerLink]="['/detail-employe', mv._id]"><button type="button" class="btn btn-inverse-info btn-fw"><i class="bi bi-eye"></i></button></a>
+                                <a class="lien-sans-style" href="/detail-employe/{{mv._id}}"><button type="button" class="btn btn-inverse-info btn-fw"><i class="bi bi-eye"></i></button></a>
                                 <!-- <a class="lien-sans-style" href=""> -->
                                     <button (click)="deleteMecanicien(mv._id)" type="button" class="btn btn-inverse-warning btn-fw"><i class="bi bi-trash"></i></button>
                                 <!-- </a> -->
-                            </td>
+                            </td> 
                         </tr>
                         }
                     </tbody>

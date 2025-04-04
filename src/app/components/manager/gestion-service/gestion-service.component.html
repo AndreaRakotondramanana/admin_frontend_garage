@@ -40,10 +40,10 @@
     
     @for (categorie of categories; track categorie._id) {
     <div class="col-md-4 grid-margin grid-margin-md-0 stretch-card m-b-3">
-        <a [routerLink]="['/detail-categorie', categorie._id]" class="lien-sans-style">
+        <a href="/detail-categorie/{{categorie._id}}" class="lien-sans-style">
             <div class="card"> 
                 <div class="card-body">
-                    <h4 class="card-title">{{ categorie.libelle_categorie }}</h4>
+                    <h4 class="card-title">{{ categorie.libelle_categorie }}</h4> 
                     <p class="card-description">
                         {{ categorie.description }}
                     </p>
@@ -52,42 +52,4 @@
         </a>
     </div> 
     }
-    <!-- <div class="col-md-4 grid-margin grid-margin-md-0 stretch-card m-b-3">
-        <a href="/detail-categorie" class="lien-sans-style">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title">Categorie 1</h4>
-                    <p class="card-description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad adipisci tenetur in consectetur vel velit et, dolores ipsam ipsum commodi nisi repudiandae quam! Eaque animi, voluptatum non id alias iste.
-                    </p>
-                </div>
-            </div>
-        </a>
-    </div>
-
-    <div class="col-md-4 grid-margin grid-margin-md-0 stretch-card m-b-3">
-        <a href="/detail-categorie" class="lien-sans-style">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title">Categorie 1</h4>
-                    <p class="card-description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad adipisci tenetur in consectetur vel velit et, dolores ipsam ipsum commodi nisi repudiandae quam! Eaque animi, voluptatum non id alias iste.
-                    </p>
-                </div>
-            </div>
-        </a>
-    </div>
-
-    <div class="col-md-4 grid-margin grid-margin-md-0 stretch-card m-b-3">
-        <a href="/detail-categorie" class="lien-sans-style">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title">Categorie 1</h4>
-                    <p class="card-description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad adipisci tenetur in consectetur vel velit et, dolores ipsam ipsum commodi nisi repudiandae quam! Eaque animi, voluptatum non id alias iste.
-                    </p>
-                </div>
-            </div>
-        </a>
-    </div> -->
 </div>
