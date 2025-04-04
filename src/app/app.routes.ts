@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { NgModule } from '@angular/core';
 import { AuthGuard } from './guards/auth.guard';
-import { RendezvousComponent } from './components/rendezvous/rendezvous.component';
 import { TableauDeBordComponent } from './components/manager/tableau-de-bord/tableau-de-bord.component';
 import { DetailCategorieComponent } from './components/manager/detail-categorie/detail-categorie.component';
 import { DetailEmployeComponent } from './components/manager/detail-employe/detail-employe.component';
